@@ -10,7 +10,7 @@ This idea is to ease development environment setup:
 This task is only required when creating a new project.
 
 ```sh
-./init.sh my-namespace my-custom-theme-name
+./init.sh
 ```
 
 ## Init submodules
@@ -33,7 +33,7 @@ REMOTE_SERVER_DOMAIN=scandipwapmrev.indvp.com LOCAL_PORT=3000 LOCAL_DOMAIN=scand
 # application is available on http://scandipwa:3000
 ```
 
-For the REMOTE_SERVER_DOMAIN environment variable, you can set whatever domain you want as long as there is a Magento isntance behind it.
+For the REMOTE_SERVER_DOMAIN environment variable, you can set whatever domain you want as long as there is a Magento instance behind it.
 Leave it running in the background / another terminal, it will log requests to the GraphQL endpoint.
 
 ## Start project

@@ -7,8 +7,8 @@ function showMessage(){
 showMessage "Let's init a new custom theme based on ScandiPWA"
 
 CWD=`pwd`
-THEME_NAMESPACE=$1
-THEME_NAME=$2
+THEME_NAMESPACE=Scandiweb
+THEME_NAME=pwa
 CUSTOM_THEME_PATH=app/design/frontend/$THEME_NAMESPACE/$THEME_NAME
 
 git init
