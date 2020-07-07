@@ -29,8 +29,8 @@ We need reverse-proxy node project:
 ```sh
 cd reverse-proxy
 npm install
-REMOTE_SERVER_DOMAIN=scandipwapmrev.indvp.com LOCAL_PORT=3000 LOCAL_DOMAIN=scandipwa node index.js
-# application is available on http://scandipwa:3000
+REMOTE_SERVER_DOMAIN=scandipwapmrev.indvp.com LOCAL_PORT=3000 LOCAL_DOMAIN=MY_LOCAL_DOMAIN node index.js
+# application is available on http://MY_LOCAL_DOMAIN:3000
 ```
 
 For the REMOTE_SERVER_DOMAIN environment variable, you can set whatever domain you want as long as there is a Magento instance behind it.
@@ -41,7 +41,7 @@ Leave it running in the background / another terminal, it will log requests to t
 We need to initialize project node dependencies:
 
 ```sh
-cd app/design/frontend/my-namespace/my-theme
+cd app/design/frontend/Scandiweb/pwa
 npm install
 ```
 
@@ -49,6 +49,6 @@ Then we start the project:
 
 ```sh
 npm run watch
+# application is available on port 3003
+# but to use it, you'll need to go through reverse proxy on http://MY_LOCAL_DOMAIN:3000
 ```
-
-It should be up and running on http://MY_LOCAL_DOMAIN
