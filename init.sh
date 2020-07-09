@@ -11,7 +11,7 @@ THEME_NAMESPACE=Scandiweb
 THEME_NAME=pwa
 CUSTOM_THEME_PATH=app/design/frontend/$THEME_NAMESPACE/$THEME_NAME
 BASE_THEME_URL=git@github.com:scandipwa/base-theme.git
-BASE_THEME_BRANCH=2.x-stable
+BASE_THEME_BRANCH=3.x-stable
 
 git init
 
@@ -32,6 +32,14 @@ rm -rf $CUSTOM_THEME_PATH/src/sw
 
 cat > $CUSTOM_THEME_PATH/README.md << EOF
 # Custom theme $1/$2
+EOF
+
+mv $CUSTOM_THEME_PATH/scandipwa.json $CUSTOM_THEME_PATH/scandipwa-original.json
+cat > $CUSTOM_THEME_PATH/scandipwa.json << EOF
+{
+    "extensions": {
+    }
+}
 EOF
 
 git add $CUSTOM_THEME_PATH

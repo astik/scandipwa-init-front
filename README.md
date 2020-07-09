@@ -20,6 +20,16 @@ EOF
 
 This is mandatory as the domain `scandipwa.local` is hardcoded in _src/config/webpack.development.config.js_.
 
+### Composer
+
+As ScandiPWA v3 relies on _Composer_, you 'll to install it.
+Either you install it on your host (no idea on how to do it as i'm no php developer), or you can use _Docker_.
+
+```sh
+alias composer='docker run --rm --interactive --tty --volume $PWD:/app composer'
+composer
+```
+
 ## Init project
 
 This task is only required when creating a new project.
@@ -60,10 +70,17 @@ cd app/design/frontend/Scandiweb/pwa
 npm install
 ```
 
+We also need to add _composer_ dependencies:
+
+```sh
+# TODO ...
+# for now, let's suppose that we don't have any composer dependency
+```
+
 Then we start the project:
 
 ```sh
-npm run watch
+npm run watch -- --env.BUILD_MODE=development
 # application is available on port 3003
 # but to use it, you'll need to go through reverse proxy on http://scandipwa.local:3000
 ```
