@@ -17,7 +17,6 @@ git init
 
 showMessage "Clone base-theme as base for our custom theme"
 git clone -b $BASE_THEME_BRANCH --depth=1 $BASE_THEME_URL $CUSTOM_THEME_PATH
-git add $CUSTOM_THEME_PATH
 
 rm -rf $CUSTOM_THEME_PATH/.git
 rm -rf $CUSTOM_THEME_PATH/.github
@@ -34,6 +33,8 @@ rm -rf $CUSTOM_THEME_PATH/src/sw
 cat > $CUSTOM_THEME_PATH/README.md << EOF
 # Custom theme $1/$2
 EOF
+
+git add $CUSTOM_THEME_PATH
 
 cd $CUSTOM_THEME_PATH
 npm ci
