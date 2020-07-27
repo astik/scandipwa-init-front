@@ -31,7 +31,7 @@ rm -rf $CUSTOM_THEME_PATH/src/app
 rm -rf $CUSTOM_THEME_PATH/src/sw
 
 cat > $CUSTOM_THEME_PATH/README.md << EOF
-# Custom theme $1/$2
+# Custom theme $THEME_NAMESPACE/$THEME_NAME
 EOF
 
 mv $CUSTOM_THEME_PATH/scandipwa.json $CUSTOM_THEME_PATH/scandipwa-original.json
