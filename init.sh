@@ -10,8 +10,10 @@ CWD=`pwd`
 THEME_NAMESPACE=Scandiweb
 THEME_NAME=pwa
 CUSTOM_THEME_PATH=app/design/frontend/$THEME_NAMESPACE/$THEME_NAME
-BASE_THEME_URL=git@github.com:scandipwa/base-theme.git
-BASE_THEME_BRANCH=3.x-stable
+# BASE_THEME_URL=git@github.com:scandipwa/base-theme.git
+# BASE_THEME_BRANCH=3.x-stable
+BASE_THEME_URL=git@github.com:astik/base-theme.git
+BASE_THEME_BRANCH=786-migrate-to-webpack-dev-server-proxy
 
 git init
 
@@ -45,12 +47,6 @@ EOF
 git add $CUSTOM_THEME_PATH
 
 cd $CUSTOM_THEME_PATH
-npm ci
-cd $CWD
-
-showMessage "Add reverse proxy project"
-git submodule add --force -b reverse-proxy git@github.com:astik/scandipwa-init-front.git reverse-proxy
-cd reverse-proxy
 npm ci
 cd $CWD
 
